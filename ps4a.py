@@ -37,7 +37,7 @@ def loadWords():
     for line in inFile:
         wordList.append(line.strip().lower())
     print "  ", len(wordList), "words loaded."
-    print wordList
+    return wordList
 
 def getFrequencyDict(sequence):
     """
