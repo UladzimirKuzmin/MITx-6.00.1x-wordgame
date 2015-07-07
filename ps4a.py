@@ -53,7 +53,7 @@ def getFrequencyDict(sequence):
     for x in sequence:
         freq[x] = freq.get(x,0) + 1
     return freq
-	
+
 
 # (end of helper code)
 # -----------------------------------
@@ -180,7 +180,7 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-	hand_copy = hand.copy()
+    hand_copy = hand.copy()
     
     for char in word:
         if char in hand_copy and hand_copy[char] != 1:
@@ -195,15 +195,15 @@ def isValidWord(word, hand, wordList):
         return True
     else:
         return False
-		
+
 #
 # Problem #4: Playing a hand
 #
 
 def calculateHandlen(hand):
-    """ 
+    """
     Returns the length (number of letters) in the current hand.
-    
+
     hand: dictionary (string-> int)
     returns: integer
     """
@@ -246,7 +246,7 @@ def playHand(hand, wordList, n):
         
             # End the game (break out of the loop)
 
-            
+
         # Otherwise (the input is not a single period):
         
             # If the word is not valid:
@@ -258,7 +258,7 @@ def playHand(hand, wordList, n):
                 # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
                 
                 # Update the hand 
-                
+
 
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
 
@@ -281,7 +281,7 @@ def playGame(wordList):
     """
     # TO DO ... <-- Remove this comment when you code this function
     print "playGame not yet implemented." # <-- Remove this line when you code the function
-   
+
 
 
 
