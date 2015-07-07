@@ -37,7 +37,7 @@ def loadWords():
     for line in inFile:
         wordList.append(line.strip().lower())
     print "  ", len(wordList), "words loaded."
-    return wordList
+    print wordList
 
 def getFrequencyDict(sequence):
     """
@@ -166,8 +166,6 @@ def updateHand(hand, word):
 
     return hand_copy
 
-
-
 #
 # Problem #3: Test word validity
 #
@@ -182,9 +180,22 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    # TO DO ... <-- Remove this comment when you code this function
-
-
+	hand_copy = hand.copy()
+    
+    for char in word:
+        if char in hand_copy and hand_copy[char] != 1:
+            hand_copy[char] = hand_copy.get(char, 0) - 1
+        else:
+            if char in hand_copy:
+                del hand_copy[char]
+            else:
+                return False    
+        
+    if word in wordList and word != '':
+        return True
+    else:
+        return False
+		
 #
 # Problem #4: Playing a hand
 #
